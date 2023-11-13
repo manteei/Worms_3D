@@ -10,10 +10,10 @@ using namespace sf;
 
 float angleX, angleY; 
 const float PI = 3.141592653;
-std::vector<std::vector<std::vector<bool>>> mass(1000, std::vector<std::vector<bool>>(1000, std::vector<bool>(1000, false)));
 float size = 20.f;
+std::vector<std::vector<std::vector<bool>>> mass(500, std::vector<std::vector<bool>>(500, std::vector<bool>(500, false)));
 TextureManager textureManager;
-Map map(100, 60, 100);
+Map map(80, 40, 80);
 
 
 int main()

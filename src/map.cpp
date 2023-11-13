@@ -3,7 +3,7 @@
 Map::Map(int x0, int y0, int z0)
 {
     maxX = x0; maxY = y0; maxZ = z0;
-    minX = 0; minY = 0; minZ = 0;
+    minX = 0; minY = 3; minZ = 0;
 }
 
 void Map::createMap(std::vector < std::vector<std::vector<bool>>>& mass) {
@@ -21,9 +21,9 @@ void Map::createMap(std::vector < std::vector<std::vector<bool>>>& mass) {
 
 bool Map::check(int x, int y, int z, std::vector < std::vector<std::vector<bool>>>& mass)
 {
-    if ((x < 0) || (x >= 1000) ||
-        (y < 0) || (y >= 1000) ||
-        (z < 0) || (z >= 1000)) return false;
+    if ((x < 0) || (x >= 500) ||
+        (y < 0) || (y >= 500) ||
+        (z < 0) || (z >= 500)) return false;
 
     return mass[x][y][z];
 }

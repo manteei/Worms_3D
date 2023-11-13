@@ -16,7 +16,7 @@
         if (!onGround) dy -= 1.5 * time;
         onGround = 0;
 
-        x += dx * time;
+        x += dx * time;  
         collision(dx, 0, 0, mass, map);
         y += dy * time;
         collision(0, dy, 0, mass, map);
@@ -41,6 +41,9 @@
         if (x + w + Dx > maxX) {
             x = maxX - w;
 
+        }
+        if (y + h + Dy < minY) {
+            y = minY +h;
         }
 
         if (y + h + Dy > maxY) {
@@ -72,12 +75,14 @@
 
     bool Player::check(int x, int y, int z, std::vector < std::vector<std::vector<bool>>>& mass)
     {
-        if ((x < 0) || (x >= 1000) ||
-            (y < 0) || (y >= 1000) ||
-            (z < 0) || (z >= 1000)) return false;
+        if ((x < 0) || (x >= 500) ||
+            (y < 0) || (y >= 500) ||
+            (z < 0) || (z >= 500)) return false;
 
         return mass[x][y][z];
     }
+
+    
 
     void Player::keyboard(float angleX)
     {
@@ -117,6 +122,11 @@
                 if (needJump) {
                     onGround = false; dy = 12;
                 }
+            }
+
+            if (Keyboard::isKeyPressed(Keyboard::E))
+            {
+                onGround = false; dy = 40;
             }
 
     };

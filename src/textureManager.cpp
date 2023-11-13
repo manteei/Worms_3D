@@ -139,5 +139,5 @@ std::vector<GLuint> TextureManager::createSkybox() {
 }
 
 GLuint TextureManager::createBox() {
-    return LoadTexture("resources/grassBox/top.jpg");
+    return LoadTexture("resources/textures/sand.jpg");
 }
